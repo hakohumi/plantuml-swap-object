@@ -45,9 +45,9 @@ This extension contributes the following settings:
 
 T.B.D.
 
-<!-- ## Known Issues
+## Known Issues
 
-現状、未確認 -->
+- Problem that "Swap Object" with `abcd A --> B efgh` results in `B --> A efgh`.
 
 ## Release Notes
 

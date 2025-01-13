@@ -8,7 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - TODO
-  - [ ] 複数行選択した範囲で各行に対して実行できる
+  - feat
+    - [ ] 複数行選択した範囲で各行に対して実行できる
+  - bug
+    - [ ] Problem that "Swap Object" with `abcd A --> B efgh` results in `B --> A efgh`.
 
 - v0.0.1
   - ✨ カーソルがある行のオブジェクトの入れ替え機能
