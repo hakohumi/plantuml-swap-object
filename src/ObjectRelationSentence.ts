@@ -65,6 +65,40 @@ export function swap_object(
   }
 }
 
+function reverse_arrow(
+  arrow: string
+): '<' | '<|' | '>' | '|>' | 'o' | '*' | '' {
+  switch (arrow) {
+    case '<':
+      return '>'
+    case '<|':
+      return '|>'
+    case '>':
+      return '<'
+    case '|>':
+      return '<|'
+    case 'o':
+      return 'o'
+    case '*':
+      return '*'
+    default:
+      return ''
+  }
+}
+
+export function swap_arrow(
+  object_relation_sentence: ObjectRelationSentence
+): ObjectRelationSentence {
+  const left_arrow = reverse_arrow(object_relation_sentence.right_arrow)
+  const right_arrow = reverse_arrow(object_relation_sentence.left_arrow)
+
+  return {
+    ...object_relation_sentence,
+    left_arrow,
+    right_arrow,
+  }
+}
+
 export function ObjectRelationSentence_to_string(
   _this: ObjectRelationSentence
 ): string {
