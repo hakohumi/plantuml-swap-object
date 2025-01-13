@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - TODO
   - feat
     - [ ] 複数行選択した範囲で各行に対して実行できる
+    - [ ] 拡張機能のアイコンを追加する
   - bug
     - [ ] Problem that "Swap Object" with `abcd A --> B efgh` results in `B --> A efgh`.
 
