@@ -1,4 +1,9 @@
 import * as vscode from 'vscode'
+import {
+  ObjectRelationSentence_to_string,
+  parse_object_relation,
+  swap_object,
+} from './ObjectRelationSentence'
 
 export function activate(context: vscode.ExtensionContext) {
   console.log(
@@ -9,6 +14,46 @@ export function activate(context: vscode.ExtensionContext) {
     'plantuml-swap-object.swapObject',
     () => {
       console.log('swap object')
+
+      const editor = vscode.window.activeTextEditor
+      if (!editor) {
+        vscode.window.showInformationMessage('No editor is active')
+        return
+      }
+
+      // カーソルがある行
+      const current_pos = editor.selection.active
+      // 行のすべてを取得
+      const line = editor.document.lineAt(current_pos.line).text
+
+      const object_relation = parse_object_relation(line)
+
+      if (object_relation == null) {
+        vscode.window.showInformationMessage("can't parse object")
+        return
+      }
+
+      // オブジェクトを入れ替える
+      const swapped_object = swap_object(object_relation)
+
+      const new_line = ObjectRelationSentence_to_string(swapped_object)
+
+      // 行を置き換える
+      editor
+        .edit((editBuilder) => {
+          editBuilder.replace(
+            new vscode.Range(
+              new vscode.Position(current_pos.line, 0),
+              new vscode.Position(current_pos.line, line.length)
+            ),
+            new_line
+          )
+        })
+        .then((success) => {
+          if (!success) {
+            vscode.window.showInformationMessage('failed to replace line')
+          }
+        })
     }
   )
   const swap_arrow_disposable = vscode.commands.registerCommand(
