@@ -81,7 +81,7 @@ export function activate(context: vscode.ExtensionContext) {
         return
       }
 
-      // オブジェクトを入れ替える
+      // 矢印の向きを入れ替える
       const swapped_arrow = swap_arrow(object_relation)
 
       const new_line = ObjectRelationSentence_to_string(swapped_arrow)
@@ -109,6 +109,50 @@ export function activate(context: vscode.ExtensionContext) {
     'plantuml-swap-object.swapObjectAndArrow',
     () => {
       console.log('swap object and arrow')
+
+      const editor = vscode.window.activeTextEditor
+      if (!editor) {
+        vscode.window.showInformationMessage('No editor is active')
+        return
+      }
+
+      // カーソルがある行
+      const current_pos = editor.selection.active
+      // 行のすべてを取得
+      const line = editor.document.lineAt(current_pos.line).text
+
+      const object_relation = parse_object_relation(line)
+
+      if (object_relation == null) {
+        vscode.window.showInformationMessage("can't parse object")
+        return
+      }
+
+      // オブジェクトを入れ替える
+      const swapped_object = swap_object(object_relation)
+      // 矢印の向きを入れ替える
+      const swapped_object_and_arrow = swap_arrow(swapped_object)
+
+      const new_line = ObjectRelationSentence_to_string(
+        swapped_object_and_arrow
+      )
+
+      // 行を置き換える
+      editor
+        .edit((editBuilder) => {
+          editBuilder.replace(
+            new vscode.Range(
+              new vscode.Position(current_pos.line, 0),
+              new vscode.Position(current_pos.line, line.length)
+            ),
+            new_line
+          )
+        })
+        .then((success) => {
+          if (!success) {
+            vscode.window.showInformationMessage('failed to replace line')
+          }
+        })
     }
   )
 
