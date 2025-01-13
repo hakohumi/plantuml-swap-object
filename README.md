@@ -1,4 +1,4 @@
-# plantuml-swap-object README
+# [plantuml-swap-object](https://github.com/hakohumi/plantuml-swap-object.git) README
 
 This extension allows the relationship between objects in a PlantUML description and the direction of arrows to be swapped.
 
