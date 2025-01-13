@@ -14,8 +14,16 @@
   "contributes": {
     "commands": [
       {
-        "command": "plantuml-swap-object.helloWorld",
-        "title": "Hello World"
+        "command": "plantuml-swap-object.swapObject",
+        "title": "Swap Object"
+      },
+      {
+        "command": "plantuml-swap-object.swapArrow",
+        "title": "Swap Arrow"
+      },
+      {
+        "command": "plantuml-swap-object.swapObjectAndArrow",
+        "title": "Swap Object and Arrow"
       }
     ]
   },
