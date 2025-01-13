@@ -1,7 +1,7 @@
 {
   "name": "plantuml-swap-object",
   "displayName": "plantuml-swap-object",
-  "description": "",
+  "description": "PlantUML記述内で書かれているオブジェクト同士の位置や矢印の向きを入れ替えます。",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.96.0"
