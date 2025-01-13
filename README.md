@@ -30,20 +30,20 @@ A --> B
 B <-- A
 ```
 
-## Extension Settings
+<!-- ## Extension Settings
 
-<!-- TODO: 設定があれば書く -->
+TODO: 設定があれば書く
 
-<!-- Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
 
 For example:
 
 This extension contributes the following settings:
 
 - `myExtension.enable`: Enable/disable this extension.
-- `myExtension.thing`: Set to `blah` to do something. -->
+- `myExtension.thing`: Set to `blah` to do something.
 
-T.B.D.
+T.B.D. -->
 
 ## Known Issues
 

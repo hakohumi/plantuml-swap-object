@@ -1,8 +1,12 @@
 {
   "name": "plantuml-swap-object",
   "displayName": "plantuml-swap-object",
-  "description": "PlantUML記述内で書かれているオブジェクト同士の位置や矢印の向きを入れ替えます。",
+  "description": "Swap the positions and arrow directions between objects written in the PlantUML description.",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hakohumi/plantuml-swap-object.git"
+  },
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -33,7 +37,8 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "make_vsix": "npx vsce package"
   },
   "devDependencies": {
     "@types/vscode": "^1.96.0",
