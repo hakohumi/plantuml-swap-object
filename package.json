@@ -2,6 +2,7 @@
   "name": "plantuml-swap-object",
   "displayName": "plantuml-swap-object",
   "description": "Swap the positions and arrow directions between objects written in the PlantUML description.",
+  "publisher": "filu",
   "version": "0.0.1",
   "repository": {
     "type": "git",
