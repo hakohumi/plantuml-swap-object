@@ -1,12 +1,34 @@
 # plantuml-swap-object README
 
-この拡張機能は、PlantUML記述内のオブジェクト同士の関係性や矢印の向きを入れ替えることができます。
+This extension allows the relationship between objects in a PlantUML description and the direction of arrows to be swapped.
 
 ## Features
 
-T.B.D.
-
 <!-- TODO: 使用例のgifを乗っける -->
+
+### Swap Object
+
+```text
+A --> B
+↓
+B --> A
+```
+
+### Swap Arrows
+
+```text
+A --> B
+↓
+A <-- B
+```
+
+### Swap Object and Arrows
+
+```text
+A --> B
+↓
+B <-- A
+```
 
 ## Extension Settings
 
