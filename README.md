@@ -4,8 +4,6 @@ This extension allows the relationship between objects in a PlantUML description
 
 ## Features
 
-<!-- TODO: 使用例のgifを乗っける -->
-
 ![Example usage of the extension](example.gif)
 
 ### Swap Object
